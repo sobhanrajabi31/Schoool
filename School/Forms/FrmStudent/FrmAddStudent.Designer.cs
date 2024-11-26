@@ -94,6 +94,7 @@
             this.btn_addstudent.TabIndex = 2;
             this.btn_addstudent.Text = "Add";
             this.btn_addstudent.UseVisualStyleBackColor = true;
+            this.btn_addstudent.Click += new System.EventHandler(this.btn_addstudent_Click);
             // 
             // FrmAddStudent
             // 

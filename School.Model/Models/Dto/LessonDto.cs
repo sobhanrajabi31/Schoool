@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace School.Model.CreateModel
+namespace School.Model
 {
-    public class CreateLessonModel
+    public class LessonDto
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
     }
 }

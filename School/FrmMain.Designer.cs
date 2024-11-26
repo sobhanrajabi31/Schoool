@@ -43,6 +43,7 @@
             this.btn_Student.TabIndex = 0;
             this.btn_Student.Text = "Student";
             this.btn_Student.UseVisualStyleBackColor = true;
+            this.btn_Student.Click += new System.EventHandler(this.btn_Student_Click);
             // 
             // btn_Class
             // 
@@ -52,6 +53,7 @@
             this.btn_Class.TabIndex = 0;
             this.btn_Class.Text = "Class";
             this.btn_Class.UseVisualStyleBackColor = true;
+            this.btn_Class.Click += new System.EventHandler(this.btn_Class_Click);
             // 
             // btn_Lesson
             // 
@@ -70,6 +72,7 @@
             this.btn_Register.TabIndex = 0;
             this.btn_Register.Text = "Register";
             this.btn_Register.UseVisualStyleBackColor = true;
+            this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
             // 
             // FrmMain
             // 
@@ -88,6 +91,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "{ Framework Type } ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.ResumeLayout(false);
 
         }

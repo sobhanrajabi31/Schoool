@@ -44,10 +44,19 @@
             this.datagrid_student.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagrid_student.Dock = System.Windows.Forms.DockStyle.Top;
             this.datagrid_student.Location = new System.Drawing.Point(0, 0);
+            this.datagrid_student.MultiSelect = false;
             this.datagrid_student.Name = "datagrid_student";
             this.datagrid_student.ReadOnly = true;
+            this.datagrid_student.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.datagrid_student.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.datagrid_student.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagrid_student.ShowCellErrors = false;
+            this.datagrid_student.ShowCellToolTips = false;
+            this.datagrid_student.ShowEditingIcon = false;
+            this.datagrid_student.ShowRowErrors = false;
             this.datagrid_student.Size = new System.Drawing.Size(593, 209);
             this.datagrid_student.TabIndex = 0;
+            this.datagrid_student.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_student_CellDoubleClick);
             // 
             // btn_addstudent
             // 
@@ -57,6 +66,7 @@
             this.btn_addstudent.TabIndex = 1;
             this.btn_addstudent.Text = "Add";
             this.btn_addstudent.UseVisualStyleBackColor = true;
+            this.btn_addstudent.Click += new System.EventHandler(this.btn_addstudent_Click);
             // 
             // btn_editstudent
             // 
@@ -66,6 +76,7 @@
             this.btn_editstudent.TabIndex = 1;
             this.btn_editstudent.Text = "Edit";
             this.btn_editstudent.UseVisualStyleBackColor = true;
+            this.btn_editstudent.Click += new System.EventHandler(this.btn_editstudent_Click);
             // 
             // btn_deletestudent
             // 
@@ -75,6 +86,7 @@
             this.btn_deletestudent.TabIndex = 1;
             this.btn_deletestudent.Text = "Delete";
             this.btn_deletestudent.UseVisualStyleBackColor = true;
+            this.btn_deletestudent.Click += new System.EventHandler(this.btn_deletestudent_Click);
             // 
             // FrmStudent
             // 
@@ -92,6 +104,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmStudent";
+            this.Load += new System.EventHandler(this.FrmStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_student)).EndInit();
             this.ResumeLayout(false);
 

@@ -96,9 +96,11 @@
             this.btn_editstudent.TabIndex = 2;
             this.btn_editstudent.Text = "Edit";
             this.btn_editstudent.UseVisualStyleBackColor = true;
+            this.btn_editstudent.Click += new System.EventHandler(this.btn_editstudent_Click);
             // 
             // txtbox_id
             // 
+            this.txtbox_id.Enabled = false;
             this.txtbox_id.Location = new System.Drawing.Point(95, 36);
             this.txtbox_id.Name = "txtbox_id";
             this.txtbox_id.Size = new System.Drawing.Size(111, 20);
@@ -149,7 +151,7 @@
         private System.Windows.Forms.Label lbl_lastname;
         private System.Windows.Forms.Label lbl_mobile;
         private System.Windows.Forms.Button btn_editstudent;
-        private System.Windows.Forms.TextBox txtbox_id;
         private System.Windows.Forms.Label lbl_id;
+        public System.Windows.Forms.TextBox txtbox_id;
     }
 }

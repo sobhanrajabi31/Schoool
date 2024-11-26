@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace School.Model.CreateModel
+namespace School.DataAccess.Repository
 {
-    internal class CreateClassModel
+    internal class ClassRepository
     {
     }
 }

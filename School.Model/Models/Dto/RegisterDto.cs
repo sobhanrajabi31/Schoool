@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace School.Model.Entities
+namespace School.Model.Dto
 {
-    public class Lesson
+    public class RegisterDto
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+        public int StudentId { get; set; }
+        public int LessonId { get; set; }
     }
 }

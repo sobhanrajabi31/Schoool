@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace School.Model.Dto
 {
-    internal class ClassDto
+    public class RegisterDto
     {
+        public int Id { get; set; }
+        public int StudentId { get; set; }
+        public int LessonId { get; set; }
     }
 }

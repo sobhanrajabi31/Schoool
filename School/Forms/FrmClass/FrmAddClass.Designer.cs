@@ -1,6 +1,4 @@
-﻿using School.Forms.FrmLesson;
-
-namespace School.Forms.FrmClass
+﻿namespace School.Forms.FrmClass
 {
     partial class FrmAddClass
     {

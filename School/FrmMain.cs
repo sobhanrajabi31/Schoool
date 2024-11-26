@@ -1,4 +1,5 @@
-﻿using System;
+﻿using School.Forms.FrmStudent;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,35 @@ namespace School
         public FrmMain()
         {
             InitializeComponent();
+        }
+
+        private void btn_Student_Click(object sender, EventArgs e)
+        {
+            FrmStudent student = new FrmStudent();
+            this.Hide();
+            student.ShowDialog();
+            this.Show();
+        }
+
+        private void btn_Class_Click(object sender, EventArgs e)
+        {
+            FrmClass Class = new FrmClass();
+            this.Hide();
+            Class.ShowDialog();
+            this.Show();
+        }
+
+        private void btn_Register_Click(object sender, EventArgs e)
+        {
+            FrmRegister register = new FrmRegister();
+            this.Hide();
+            register.ShowDialog();
+            this.Show();
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace School.Model
+namespace School.DataAccess.Repository
 {
-    public class StudentDto
+    public class RegisterRepository
     {
     }
 }

@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repository\ClassRepository.cs" />
+    <Compile Include="Repository\RegisterRepository.cs" />
+    <Compile Include="Repository\StudentRepository.cs" />
     <Compile Include="SchoolDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

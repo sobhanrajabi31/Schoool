@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace School.Model.CreateModel
+namespace School.BLL.Services
 {
-    internal class CreateRegisterModel
+    public class ClassService
     {
     }
 }

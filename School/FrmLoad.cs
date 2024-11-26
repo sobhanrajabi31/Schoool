@@ -16,5 +16,20 @@ namespace School
         {
             InitializeComponent();
         }
+
+        private void btn_open_Click(object sender, EventArgs e)
+        {
+            string fw;
+            if (radiobtn_ado.Checked)
+                fw = "School | Ado.net";
+            else
+                fw = "School | EF";
+
+            FrmMain frm = new FrmMain();
+            frm.Text = fw;
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

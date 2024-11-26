@@ -13,16 +13,12 @@ namespace School.Model
         {
             string mobile = value.ToString();
 
-            if (string.IsNullOrEmpty(mobile))
+            if (string.IsNullOrEmpty(mobile) || mobile.Length != 11 || !mobile.StartsWith("09"))
             {
-                ErrorMessage = "شماره موبایل اجباری است";
+                ErrorMessage = "شماره موبایل وارد شده نامعتبر است";
                 return false;
             }
-            if (mobile.Length != 11 || !mobile.StartsWith("09"))
-            {
-                ErrorMessage = "شماره موبایل نامعتبر است";
-                return false;
-            }
+
             return true;
         }
     }
