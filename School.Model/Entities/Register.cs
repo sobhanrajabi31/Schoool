@@ -10,13 +10,9 @@ namespace School.Model.Entities
     public class Register
     {
         public int Id { get; set; }
-
         public int StudentId { get; set; }
-        [ForeignKey(nameof(StudentId))]
-        public Student Student { get; set; }
-
         public int ClassId { get; set; }
-        [ForeignKey(nameof(ClassId))]
+        public Student Student { get; set; }
         public Class Class { get; set; }
     }
 }

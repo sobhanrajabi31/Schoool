@@ -16,5 +16,7 @@ namespace School.Forms.FrmRegister
         {
             InitializeComponent();
         }
+
+        public Action OnRegisterInserted;
     }
 }

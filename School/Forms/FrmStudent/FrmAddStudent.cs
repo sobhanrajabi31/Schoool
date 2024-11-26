@@ -39,5 +39,10 @@ namespace School.Forms.FrmStudent
 
             MessageBox.Show(result.Message);
         }
+
+        private void FrmAddStudent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

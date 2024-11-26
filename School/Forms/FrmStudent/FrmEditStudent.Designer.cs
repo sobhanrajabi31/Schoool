@@ -143,15 +143,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtbox_firstname;
-        private System.Windows.Forms.TextBox txtbox_lastname;
-        private System.Windows.Forms.TextBox txtbox_mobile;
         private System.Windows.Forms.Label lbl_firstname;
         private System.Windows.Forms.Label lbl_lastname;
         private System.Windows.Forms.Label lbl_mobile;
         private System.Windows.Forms.Button btn_editstudent;
         private System.Windows.Forms.Label lbl_id;
         public System.Windows.Forms.TextBox txtbox_id;
+        public System.Windows.Forms.TextBox txtbox_firstname;
+        public System.Windows.Forms.TextBox txtbox_lastname;
+        public System.Windows.Forms.TextBox txtbox_mobile;
     }
 }

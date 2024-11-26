@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegister));
             this.datagrid_register = new System.Windows.Forms.DataGridView();
             this.btn_addregister = new System.Windows.Forms.Button();
-            this.btn_editregister = new System.Windows.Forms.Button();
             this.btn_deleteregister = new System.Windows.Forms.Button();
+            this.btn_editregister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_register)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,15 +58,7 @@
             this.btn_addregister.TabIndex = 1;
             this.btn_addregister.Text = "Add";
             this.btn_addregister.UseVisualStyleBackColor = true;
-            // 
-            // btn_editregister
-            // 
-            this.btn_editregister.Location = new System.Drawing.Point(246, 219);
-            this.btn_editregister.Name = "btn_editregister";
-            this.btn_editregister.Size = new System.Drawing.Size(101, 33);
-            this.btn_editregister.TabIndex = 1;
-            this.btn_editregister.Text = "Edit";
-            this.btn_editregister.UseVisualStyleBackColor = true;
+            this.btn_addregister.Click += new System.EventHandler(this.btn_addregister_Click);
             // 
             // btn_deleteregister
             // 
@@ -76,6 +68,16 @@
             this.btn_deleteregister.TabIndex = 1;
             this.btn_deleteregister.Text = "Delete";
             this.btn_deleteregister.UseVisualStyleBackColor = true;
+            // 
+            // btn_editregister
+            // 
+            this.btn_editregister.Location = new System.Drawing.Point(246, 219);
+            this.btn_editregister.Name = "btn_editregister";
+            this.btn_editregister.Size = new System.Drawing.Size(101, 33);
+            this.btn_editregister.TabIndex = 1;
+            this.btn_editregister.Text = "Edit";
+            this.btn_editregister.UseVisualStyleBackColor = true;
+            this.btn_editregister.Click += new System.EventHandler(this.btn_editregister_Click);
             // 
             // FrmRegister
             // 
@@ -103,7 +105,7 @@
 
         private System.Windows.Forms.DataGridView datagrid_register;
         private System.Windows.Forms.Button btn_addregister;
-        private System.Windows.Forms.Button btn_editregister;
         private System.Windows.Forms.Button btn_deleteregister;
+        private System.Windows.Forms.Button btn_editregister;
     }
 }
