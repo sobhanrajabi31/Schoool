@@ -1,4 +1,6 @@
-﻿namespace School.Forms.FrmRegister
+﻿using School.Forms.FrmStudent;
+
+namespace School.Forms.FrmRegister
 {
     partial class FrmAddRegister
     {
@@ -29,13 +31,66 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddRegister));
+            this.lbl_studentid = new System.Windows.Forms.Label();
+            this.lbl_lessonid = new System.Windows.Forms.Label();
+            this.btn_addregister = new System.Windows.Forms.Button();
+            this.combobox_studentid = new System.Windows.Forms.ComboBox();
+            this.combobox_lessonid = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // lbl_studentid
+            // 
+            this.lbl_studentid.AutoSize = true;
+            this.lbl_studentid.Location = new System.Drawing.Point(35, 78);
+            this.lbl_studentid.Name = "lbl_studentid";
+            this.lbl_studentid.Size = new System.Drawing.Size(53, 13);
+            this.lbl_studentid.TabIndex = 1;
+            this.lbl_studentid.Text = "StudentId";
+            // 
+            // lbl_lessonid
+            // 
+            this.lbl_lessonid.AutoSize = true;
+            this.lbl_lessonid.Location = new System.Drawing.Point(35, 104);
+            this.lbl_lessonid.Name = "lbl_lessonid";
+            this.lbl_lessonid.Size = new System.Drawing.Size(50, 13);
+            this.lbl_lessonid.TabIndex = 1;
+            this.lbl_lessonid.Text = "LessonId";
+            // 
+            // btn_addregister
+            // 
+            this.btn_addregister.Location = new System.Drawing.Point(91, 127);
+            this.btn_addregister.Name = "btn_addregister";
+            this.btn_addregister.Size = new System.Drawing.Size(121, 23);
+            this.btn_addregister.TabIndex = 2;
+            this.btn_addregister.Text = "Add";
+            this.btn_addregister.UseVisualStyleBackColor = true;
+            // 
+            // combobox_studentid
+            // 
+            this.combobox_studentid.FormattingEnabled = true;
+            this.combobox_studentid.Location = new System.Drawing.Point(91, 74);
+            this.combobox_studentid.Name = "combobox_studentid";
+            this.combobox_studentid.Size = new System.Drawing.Size(121, 21);
+            this.combobox_studentid.TabIndex = 3;
+            // 
+            // combobox_lessonid
+            // 
+            this.combobox_lessonid.FormattingEnabled = true;
+            this.combobox_lessonid.Location = new System.Drawing.Point(91, 101);
+            this.combobox_lessonid.Name = "combobox_lessonid";
+            this.combobox_lessonid.Size = new System.Drawing.Size(121, 21);
+            this.combobox_lessonid.TabIndex = 3;
             // 
             // FrmAddRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(241, 224);
+            this.Controls.Add(this.combobox_lessonid);
+            this.Controls.Add(this.combobox_studentid);
+            this.Controls.Add(this.btn_addregister);
+            this.Controls.Add(this.lbl_lessonid);
+            this.Controls.Add(this.lbl_studentid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -45,9 +100,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddRegister";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+        private System.Windows.Forms.Label lbl_studentid;
+        private System.Windows.Forms.Label lbl_lessonid;
+        private System.Windows.Forms.Button btn_addregister;
+        private System.Windows.Forms.ComboBox combobox_studentid;
+        private System.Windows.Forms.ComboBox combobox_lessonid;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace School.Forms.FrmLesson
 {
-    public partial class FrnEditLesson : Form
+    public partial class FrmEditLesson : Form
     {
-        public FrnEditLesson()
+        public FrmEditLesson()
         {
             InitializeComponent();
         }

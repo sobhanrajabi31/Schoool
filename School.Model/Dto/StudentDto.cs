@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace School.DataAccess
+namespace School.Model
 {
-    public class Class1
+    public class StudentDto
     {
     }
 }

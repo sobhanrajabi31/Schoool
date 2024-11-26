@@ -49,6 +49,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extension.cs" />
     <Compile Include="Forms\FrmClass\FrmAddClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +81,11 @@
     <Compile Include="Forms\FrmLesson\FrmAddLesson.Designer.cs">
       <DependentUpon>FrmAddLesson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmLesson\FrnEditLesson.cs">
+    <Compile Include="Forms\FrmLesson\FrmEditLesson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmLesson\FrnEditLesson.Designer.cs">
-      <DependentUpon>FrnEditLesson.cs</DependentUpon>
+    <Compile Include="Forms\FrmLesson\FrmEditLesson.Designer.cs">
+      <DependentUpon>FrmEditLesson.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmRegister\FrmAddRegister.cs">
       <SubType>Form</SubType>
@@ -96,6 +98,12 @@
     </Compile>
     <Compile Include="Forms\FrmRegister\FrmEditRegister.Designer.cs">
       <DependentUpon>FrmEditRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegister\FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegister\FrmRegister.Designer.cs">
+      <DependentUpon>FrmRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmStudent\FrmAddStudent.cs">
       <SubType>Form</SubType>
@@ -115,11 +123,11 @@
     <Compile Include="Forms\FrmClass\FrmClass.Designer.cs">
       <DependentUpon>FrmClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmLesson\FrmLesson.cs">
+    <Compile Include="Forms\FrmStudent\FrmStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmLesson\FrmLesson.Designer.cs">
-      <DependentUpon>FrmLesson.cs</DependentUpon>
+    <Compile Include="Forms\FrmStudent\FrmStudent.Designer.cs">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLoad.cs">
       <SubType>Form</SubType>
@@ -133,17 +141,11 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmRegister\FrmRegister.cs">
+    <Compile Include="Forms\FrmLesson\FrmLesson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmRegister\FrmRegister.Designer.cs">
-      <DependentUpon>FrmRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmStudent\FrmStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmStudent\FrmStudent.Designer.cs">
-      <DependentUpon>FrmStudent.cs</DependentUpon>
+    <Compile Include="Forms\FrmLesson\FrmLesson.Designer.cs">
+      <DependentUpon>FrmLesson.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,11 +161,8 @@
     <EmbeddedResource Include="Forms\FrmLesson\FrmAddLesson.resx">
       <DependentUpon>FrmAddLesson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmLesson\FrmLesson.resx">
-      <DependentUpon>FrmLesson.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmLesson\FrnEditLesson.resx">
-      <DependentUpon>FrnEditLesson.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmLesson\FrmEditLesson.resx">
+      <DependentUpon>FrmEditLesson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRegister\FrmAddRegister.resx">
       <DependentUpon>FrmAddRegister.cs</DependentUpon>
@@ -179,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmStudent\FrmEditStudent.resx">
       <DependentUpon>FrmEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLesson\FrmLesson.resx">
+      <DependentUpon>FrmLesson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmStudent\FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>

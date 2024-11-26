@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace School.Model
+namespace School.Model.CreateModel
 {
-    public class Class1
+    internal class CreateClassModel
     {
     }
 }
