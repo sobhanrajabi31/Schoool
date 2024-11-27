@@ -21,6 +21,7 @@ namespace School.Forms.FrmStudent
         }
 
         public Action OnStudentInserted;
+        public int IdIndex;
 
         private void AddStudent_EF()
         {
@@ -60,6 +61,26 @@ namespace School.Forms.FrmStudent
             MessageBox.Show(result.Message);
         }
 
+        private void AddStudent_Mem()
+        {
+            StudentService st = new StudentService();
+
+            var data = new StudentModel
+            {
+                Id = IdIndex,
+                FirstName = txtbox_firstname.Text,
+                LastName = txtbox_lastname.Text,
+                Mobile = txtbox_mobile.Text
+            };
+
+            var result = st.InsertMem(data);
+
+            if (result.Success)
+                OnStudentInserted();
+
+            MessageBox.Show(result.Message);
+        }
+
         private void btn_addstudent_Click(object sender, EventArgs e)
         {
             if (DbFramework.Framework == Framework.EF)
@@ -67,9 +88,7 @@ namespace School.Forms.FrmStudent
             else if (DbFramework.Framework == Framework.AdoNET)
                 AddStudent_ADO();
             else if (DbFramework.Framework == Framework.InMemory)
-            {
-
-            }
+                AddStudent_Mem();
         }
 
         private void FrmAddStudent_Load(object sender, EventArgs e)

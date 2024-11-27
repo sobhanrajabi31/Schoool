@@ -1,4 +1,5 @@
-﻿using School.Model;
+﻿using School.BLL;
+using School.Model;
 using School.Model.CreateModel;
 using School.Model.Entities;
 using System;
@@ -14,6 +15,11 @@ namespace School.DataAccess.Repository
     public class StudentRepository
     {
         SchoolDataContext db = new SchoolDataContext();
+
+        public List<Student> MemoryDB()
+        {
+            return StudentMM.Students;
+        }
 
         public List<StudentDto> GetDataEF()
         {
@@ -40,7 +46,7 @@ namespace School.DataAccess.Repository
 
         public void InsertAdo(StudentDto student)
         {
-            AdoSqlCommands.ExcNonQueryProc("InsertAdo", 
+            AdoSqlCommands.ExcNonQueryProc("InsertAdo",
                 new SqlParameter("FirstName", student.FirstName),
                 new SqlParameter("LastName", student.LastName),
                 new SqlParameter("Mobile", student.Mobile));
@@ -48,7 +54,7 @@ namespace School.DataAccess.Repository
 
         public void InsertMem(Student student)
         {
-
+            StudentMM.Students.Add(student);
         }
 
         public void UpdateEF(Student student)
@@ -69,12 +75,20 @@ namespace School.DataAccess.Repository
 
         public void UpdateMem(Student student)
         {
-
+            for (int i = 0; i < StudentMM.Students.Count; i++)
+            {
+                if (StudentMM.Students[i].Id == student.Id)
+                {
+                    StudentMM.Students[i].FirstName = student.FirstName;
+                    StudentMM.Students[i].LastName = student.LastName;
+                    StudentMM.Students[i].Mobile = student.Mobile;
+                }
+            }
         }
 
         public void DeleteEF(int id)
         {
-            Student student = db.Students.Where(x=>x.Id == id).Single();
+            Student student = db.Students.Where(x => x.Id == id).Single();
             db.Students.Remove(student);
             db.SaveChanges();
         }
@@ -86,7 +100,7 @@ namespace School.DataAccess.Repository
 
         public void DeleteMem(int id)
         {
-
+            StudentMM.Students.RemoveAt(id);
         }
 
         public bool MobileValidationEF(string mobile, int? id = null)
@@ -106,6 +120,22 @@ namespace School.DataAccess.Repository
                 foreach (DataRow row in dataTable.Rows)
                 {
                     if (row[0].ToString().Parse() == id && row[3].ToString() == mobile)
+                        return false;
+                }
+
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool MobileValidationMem(string mobile, int? id = null)
+        {
+            if (StudentMM.Students.Count > 0)
+            {
+                for (int i = 0; i < StudentMM.Students.Count; i++)
+                {
+                    if (StudentMM.Students[i].Id == id && StudentMM.Students[i].Mobile == mobile)
                         return false;
                 }
 

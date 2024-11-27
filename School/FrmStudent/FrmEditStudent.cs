@@ -63,6 +63,27 @@ namespace School.Forms.FrmStudent
             MessageBox.Show(result.Message);
         }
 
+        private void EditStudent_Mem()
+        {
+            StudentService st = new StudentService();
+
+            var data = new StudentModel
+            {
+                Id = txtbox_id.Text.Parse(),
+                FirstName = txtbox_firstname.Text,
+                LastName = txtbox_lastname.Text,
+                Mobile = txtbox_mobile.Text
+            };
+
+            var result = st.UpdateMem(data);
+
+            if (result.Success)
+                OnStudentInserted();
+
+            MessageBox.Show(result.Message);
+        }
+
+
         private void btn_editstudent_Click(object sender, EventArgs e)
         {
             if (DbFramework.Framework == Framework.EF)
@@ -70,9 +91,7 @@ namespace School.Forms.FrmStudent
             else if (DbFramework.Framework == Framework.AdoNET)
                 EditStudent_ADO();
             else if (DbFramework.Framework == Framework.InMemory)
-            {
-
-            }
+                EditStudent_Mem();
         }
     }
 }

@@ -62,6 +62,7 @@
       <DependentUpon>202411271908192_ChangeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="StudentMM.cs" />
     <Compile Include="StudentRepository.cs" />
     <Compile Include="SchoolDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

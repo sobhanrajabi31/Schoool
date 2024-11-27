@@ -1,4 +1,5 @@
-﻿using School.BLL.Services;
+﻿using School.BLL;
+using School.BLL.Services;
 using School.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,11 @@ namespace School.Forms.FrmStudent
 {
     public partial class FrmStudent : Form
     {
+        StudentService stt = new StudentService();
         public FrmStudent()
         {
             InitializeComponent();
+            stt.LoadMemoryDB();
         }
 
         private void FrmStudent_Load(object sender, EventArgs e)
@@ -36,7 +39,7 @@ namespace School.Forms.FrmStudent
 
             else if (DbFramework.Framework == Framework.InMemory)
             {
-
+                datagrid_student.DataSource = st.MemoryDB();
             }
         }
 
@@ -48,6 +51,7 @@ namespace School.Forms.FrmStudent
             {
                 FrmAddStudent frm = new FrmAddStudent();
                 frm.OnStudentInserted = FillDataGV;
+                frm.IdIndex = datagrid_student.Rows.Count + 1;
                 frm.ShowDialog();
             }
 
@@ -83,9 +87,7 @@ namespace School.Forms.FrmStudent
                             st.DeleteAdo(id);
 
                         else if (DbFramework.Framework == Framework.InMemory)
-                        {
-
-                        }
+                            st.DeleteMem(datagrid_student.CurrentRow.Index);
                     }
                 }
             }
