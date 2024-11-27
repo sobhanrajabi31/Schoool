@@ -12,6 +12,5 @@ namespace School.Model.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Mobile { get; set; }
-        public bool Deleted { get; set; }
     }
 }

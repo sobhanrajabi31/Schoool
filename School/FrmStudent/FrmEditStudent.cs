@@ -1,4 +1,6 @@
 ﻿using School.BLL.Services;
+using School.DataAccess;
+using School.Model;
 using School.Model.CreateModel;
 using System;
 using System.Collections.Generic;
@@ -12,27 +14,28 @@ using System.Windows.Forms;
 
 namespace School.Forms.FrmStudent
 {
-    public partial class FrmAddStudent : Form
+    public partial class FrmEditStudent : Form
     {
-        public FrmAddStudent()
+        public FrmEditStudent()
         {
             InitializeComponent();
         }
 
         public Action OnStudentInserted;
 
-        private void btn_addstudent_Click(object sender, EventArgs e)
+        private void EditStudent_EF()
         {
             StudentService st = new StudentService();
 
             var data = new StudentModel
             {
+                Id = txtbox_id.Text.Parse(),
                 FirstName = txtbox_firstname.Text,
                 LastName = txtbox_lastname.Text,
                 Mobile = txtbox_mobile.Text
             };
 
-            var result = st.Insert(data);
+            var result = st.Update(data);
 
             if (result.Success)
                 OnStudentInserted();
@@ -40,9 +43,17 @@ namespace School.Forms.FrmStudent
             MessageBox.Show(result.Message);
         }
 
-        private void FrmAddStudent_Load(object sender, EventArgs e)
+        private void EditStudent_ADO()
         {
 
+        }
+
+        private void btn_editstudent_Click(object sender, EventArgs e)
+        {
+            if (DbFramework.Framework == Framework.EF)
+                EditStudent_EF();
+            else
+                EditStudent_ADO();
         }
     }
 }

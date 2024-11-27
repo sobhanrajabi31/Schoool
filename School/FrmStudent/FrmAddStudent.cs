@@ -1,5 +1,5 @@
 ﻿using School.BLL.Services;
-using School.Model;
+using School.DataAccess;
 using School.Model.CreateModel;
 using System;
 using System.Collections.Generic;
@@ -13,33 +13,50 @@ using System.Windows.Forms;
 
 namespace School.Forms.FrmStudent
 {
-    public partial class FrmEditStudent : Form
+    public partial class FrmAddStudent : Form
     {
-        public FrmEditStudent()
+        public FrmAddStudent()
         {
             InitializeComponent();
         }
 
         public Action OnStudentInserted;
 
-        private void btn_editstudent_Click(object sender, EventArgs e)
+        private void AddStudent_EF()
         {
             StudentService st = new StudentService();
 
             var data = new StudentModel
             {
-                Id = txtbox_id.Text.Parse(),
                 FirstName = txtbox_firstname.Text,
                 LastName = txtbox_lastname.Text,
                 Mobile = txtbox_mobile.Text
             };
 
-            var result = st.Update(data);
+            var result = st.Insert(data);
 
             if (result.Success)
                 OnStudentInserted();
 
             MessageBox.Show(result.Message);
+        }
+
+        private void AddStudent_ADO()
+        {
+            
+        }
+
+        private void btn_addstudent_Click(object sender, EventArgs e)
+        {
+            if (DbFramework.Framework == Framework.EF)
+                AddStudent_EF();
+            else if (DbFramework.Framework == Framework.AdoNET)
+                AddStudent_ADO();
+        }
+
+        private void FrmAddStudent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

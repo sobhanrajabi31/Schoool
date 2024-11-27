@@ -32,23 +32,22 @@ namespace School.DataAccess.Repository
 
         public void Delete(int id)
         {
-            var student = db.Students.Where(x => x.Id == id).Single();
-            student.Deleted = true;
-
+            Student student = db.Students.Where(x=>x.Id == id).Single();
+            db.Students.Remove(student);
             db.SaveChanges();
         }
 
         public bool MobileValidation(string mobile, int? id = null)
         {
-            if (db.Students.Where(s=>s.Id == id && s.Mobile == mobile).Any())
+            if (db.Students.Where(s => s.Id == id && s.Mobile == mobile).Any())
                 return false;
 
-            return db.Students.Where(x => x.Deleted == false && x.Mobile == mobile).Any();
+            return db.Students.Where(x => x.Mobile == mobile).Any();
         }
 
         public List<StudentDto> GetData()
         {
-            return db.Students.Where(x => x.Deleted == false).Select(x => new StudentDto
+            return db.Students.Select(x => new StudentDto
             {
                 Id = x.Id,
                 FirstName = x.FirstName,

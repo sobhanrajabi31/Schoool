@@ -1,4 +1,5 @@
 ﻿using School.BLL.Services;
+using School.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,8 +26,15 @@ namespace School.Forms.FrmStudent
 
         private void FillDataGV()
         {
-            StudentService st = new StudentService();
-            datagrid_student.DataSource = st.GetData();
+            if (DbFramework.Framework == Framework.EF)
+            {
+                StudentService st = new StudentService();
+                datagrid_student.DataSource = st.GetData();
+            }
+            else if (DbFramework.Framework == Framework.AdoNET)
+            {
+
+            }
         }
 
         private void Buttons(object sender, EventArgs e)
@@ -38,10 +46,9 @@ namespace School.Forms.FrmStudent
                 FrmAddStudent frm = new FrmAddStudent();
                 frm.OnStudentInserted = FillDataGV;
                 frm.ShowDialog();
-                FillDataGV();
             }
 
-            if (button.Name == btn_editstudent.Name)
+            else if (button.Name == btn_editstudent.Name)
             {
                 if (datagrid_student.Rows.Count > 0 && datagrid_student.CurrentRow.Index != -1)
                 {
@@ -54,35 +61,37 @@ namespace School.Forms.FrmStudent
                     frm.txtbox_mobile.Text = datagrid_student.CurrentRow.Cells[3].Value.ToString();
 
                     frm.ShowDialog();
-                    FillDataGV();
                 }
             }
 
-            if (button.Name == btn_deletestudent.Name)
+            else if (button.Name == btn_deletestudent.Name)
             {
                 if (datagrid_student.Rows.Count > 0 && datagrid_student.CurrentRow.Index != -1)
                 {
                     if (MessageBox.Show("Are you sure?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        int id = int.Parse(datagrid_student.CurrentRow.Cells[0].Value.ToString());
+                        if (DbFramework.Framework == Framework.EF)
+                        {
+                            int id = int.Parse(datagrid_student.CurrentRow.Cells[0].Value.ToString());
 
-                        StudentService st = new StudentService();
-                        var result = st.Delete(id);
+                            StudentService st = new StudentService();
+                            st.Delete(id);
+                        }
+                        else if (DbFramework.Framework == Framework.AdoNET)
+                        {
 
-                        if (result.Success)
-                            FillDataGV();
+                        }
                     }
                 }
             }
 
+            FillDataGV();
         }
 
         private void datagrid_student_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (datagrid_student.Rows.Count > 0 && datagrid_student.CurrentRow.Index != -1)
-            {
                 Buttons(btn_editstudent, e);
-            }
         }
     }
 }

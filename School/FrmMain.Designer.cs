@@ -31,56 +31,45 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btn_Student = new System.Windows.Forms.Button();
             this.btn_Class = new System.Windows.Forms.Button();
-            this.btn_Lesson = new System.Windows.Forms.Button();
             this.btn_Register = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Student
             // 
-            this.btn_Student.Location = new System.Drawing.Point(14, 12);
+            this.btn_Student.Location = new System.Drawing.Point(15, 12);
             this.btn_Student.Name = "btn_Student";
             this.btn_Student.Size = new System.Drawing.Size(115, 33);
             this.btn_Student.TabIndex = 0;
             this.btn_Student.Text = "Student";
             this.btn_Student.UseVisualStyleBackColor = true;
-            this.btn_Student.Click += new System.EventHandler(this.btn_Student_Click);
+            this.btn_Student.Click += new System.EventHandler(this.buttons);
             // 
             // btn_Class
             // 
-            this.btn_Class.Location = new System.Drawing.Point(14, 51);
+            this.btn_Class.Location = new System.Drawing.Point(136, 12);
             this.btn_Class.Name = "btn_Class";
             this.btn_Class.Size = new System.Drawing.Size(115, 33);
             this.btn_Class.TabIndex = 0;
             this.btn_Class.Text = "Class";
             this.btn_Class.UseVisualStyleBackColor = true;
-            this.btn_Class.Click += new System.EventHandler(this.btn_Class_Click);
-            // 
-            // btn_Lesson
-            // 
-            this.btn_Lesson.Location = new System.Drawing.Point(135, 12);
-            this.btn_Lesson.Name = "btn_Lesson";
-            this.btn_Lesson.Size = new System.Drawing.Size(115, 33);
-            this.btn_Lesson.TabIndex = 0;
-            this.btn_Lesson.Text = "Lesson";
-            this.btn_Lesson.UseVisualStyleBackColor = true;
+            this.btn_Class.Click += new System.EventHandler(this.buttons);
             // 
             // btn_Register
             // 
-            this.btn_Register.Location = new System.Drawing.Point(135, 51);
+            this.btn_Register.Location = new System.Drawing.Point(257, 12);
             this.btn_Register.Name = "btn_Register";
             this.btn_Register.Size = new System.Drawing.Size(115, 33);
             this.btn_Register.TabIndex = 0;
             this.btn_Register.Text = "Register";
             this.btn_Register.UseVisualStyleBackColor = true;
-            this.btn_Register.Click += new System.EventHandler(this.btn_Register_Click);
+            this.btn_Register.Click += new System.EventHandler(this.buttons);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 97);
+            this.ClientSize = new System.Drawing.Size(386, 56);
             this.Controls.Add(this.btn_Register);
-            this.Controls.Add(this.btn_Lesson);
             this.Controls.Add(this.btn_Class);
             this.Controls.Add(this.btn_Student);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -90,7 +79,7 @@
             this.Name = "FrmMain";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "{ Framework Type } ";
+            this.Text = "School Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.ResumeLayout(false);
 
@@ -100,7 +89,6 @@
 
         private System.Windows.Forms.Button btn_Student;
         private System.Windows.Forms.Button btn_Class;
-        private System.Windows.Forms.Button btn_Lesson;
         private System.Windows.Forms.Button btn_Register;
     }
 }

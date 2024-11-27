@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BaseValidation.cs" />
     <Compile Include="ClassDto.cs" />
+    <Compile Include="DbFramework.cs" />
     <Compile Include="Models\ClassModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\StudentModel.cs" />

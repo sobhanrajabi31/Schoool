@@ -1,11 +1,12 @@
 ﻿using School.Model.Entities;
 using System.Data.Entity;
+using System.Configuration;
 
 namespace School.DataAccess
 {
     public class SchoolDataContext : DbContext
     {
-        public SchoolDataContext() : base("Data Source=.;Initial Catalog=SchoolDB;Integrated Security=True")
+        public SchoolDataContext() : base(AdoConnection.ConnectionString)
         { }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
