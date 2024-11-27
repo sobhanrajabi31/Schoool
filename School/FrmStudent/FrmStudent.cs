@@ -24,7 +24,7 @@ namespace School.Forms.FrmStudent
 
         private void FrmStudent_Load(object sender, EventArgs e)
         {
-            FillDataGV();
+            FillDataGV(); 
         }
 
         private void FillDataGV()
