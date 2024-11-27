@@ -41,12 +41,14 @@
             this.datagrid_student.AllowUserToDeleteRows = false;
             this.datagrid_student.AllowUserToResizeColumns = false;
             this.datagrid_student.AllowUserToResizeRows = false;
+            this.datagrid_student.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.datagrid_student.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagrid_student.Dock = System.Windows.Forms.DockStyle.Top;
             this.datagrid_student.Location = new System.Drawing.Point(0, 0);
             this.datagrid_student.MultiSelect = false;
             this.datagrid_student.Name = "datagrid_student";
             this.datagrid_student.ReadOnly = true;
+            this.datagrid_student.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.datagrid_student.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.datagrid_student.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.datagrid_student.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

@@ -33,10 +33,12 @@ namespace School
         {
             if (combobox_framework.SelectedIndex == 0)
                 DbFramework.Framework = Framework.EF;
+
             else if (combobox_framework.SelectedIndex == 1)
                 DbFramework.Framework = Framework.AdoNET;
+
             else if (combobox_framework.SelectedIndex == 2)
-                DbFramework.Framework = Framework.OnMemory;
+                DbFramework.Framework = Framework.InMemory;
         }
     }
 }

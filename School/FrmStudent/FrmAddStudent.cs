@@ -66,6 +66,10 @@ namespace School.Forms.FrmStudent
                 AddStudent_EF();
             else if (DbFramework.Framework == Framework.AdoNET)
                 AddStudent_ADO();
+            else if (DbFramework.Framework == Framework.InMemory)
+            {
+
+            }
         }
 
         private void FrmAddStudent_Load(object sender, EventArgs e)

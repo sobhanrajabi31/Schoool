@@ -38,9 +38,17 @@ namespace School.DataAccess.Repository
             db.SaveChanges();
         }
 
-        public void InsertAdo(Student student)
+        public void InsertAdo(StudentDto student)
         {
-            AdoSqlCommands.ExcNonQueryProc("InsertAdo", AdoSqlCommands.ModelToSqlParams(student).ToArray());
+            AdoSqlCommands.ExcNonQueryProc("InsertAdo", 
+                new SqlParameter("FirstName", student.FirstName),
+                new SqlParameter("LastName", student.LastName),
+                new SqlParameter("Mobile", student.Mobile));
+        }
+
+        public void InsertMem(Student student)
+        {
+
         }
 
         public void UpdateEF(Student student)
@@ -59,6 +67,11 @@ namespace School.DataAccess.Repository
             AdoSqlCommands.ExcNonQueryProc("UpdateAdo", AdoSqlCommands.ModelToSqlParams(student).ToArray());
         }
 
+        public void UpdateMem(Student student)
+        {
+
+        }
+
         public void DeleteEF(int id)
         {
             Student student = db.Students.Where(x=>x.Id == id).Single();
@@ -68,6 +81,12 @@ namespace School.DataAccess.Repository
 
         public void DeleteAdo(int id)
         {
+            AdoSqlCommands.ExcNonQueryProc("DeleteAdo", new SqlParameter("Id", id));
+        }
+
+        public void DeleteMem(int id)
+        {
+
         }
 
         public bool MobileValidationEF(string mobile, int? id = null)
@@ -82,15 +101,18 @@ namespace School.DataAccess.Repository
         {
             DataTable dataTable = AdoSqlCommands.TableProc("MobileValidationAdo", new SqlParameter("mobile", mobile));
 
-            foreach (DataRow row in dataTable.Rows)
+            if (dataTable.Rows.Count > 0)
             {
-                if (row[0].ToString().Parse() == id && row[2].ToString() == mobile)
-                    return false;
-                else
-                    return true;
-            }
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    if (row[0].ToString().Parse() == id && row[3].ToString() == mobile)
+                        return false;
+                }
 
-            return true;
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

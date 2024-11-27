@@ -26,15 +26,17 @@ namespace School.Forms.FrmStudent
 
         private void FillDataGV()
         {
+            StudentService st = new StudentService();
+
             if (DbFramework.Framework == Framework.EF)
-            {
-                StudentService st = new StudentService();
                 datagrid_student.DataSource = st.GetDataEF();
-            }
+
             else if (DbFramework.Framework == Framework.AdoNET)
-            {
-                StudentService st = new StudentService();
                 datagrid_student.DataSource = st.GetDataAdo();
+
+            else if (DbFramework.Framework == Framework.InMemory)
+            {
+
             }
         }
 
@@ -71,15 +73,18 @@ namespace School.Forms.FrmStudent
                 {
                     if (MessageBox.Show("Are you sure?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        if (DbFramework.Framework == Framework.EF)
-                        {
-                            int id = int.Parse(datagrid_student.CurrentRow.Cells[0].Value.ToString());
+                        int id = int.Parse(datagrid_student.CurrentRow.Cells[0].Value.ToString());
+                        StudentService st = new StudentService();
 
-                            StudentService st = new StudentService();
+                        if (DbFramework.Framework == Framework.EF)
                             st.DeleteEF(id);
-                        }
+
                         else if (DbFramework.Framework == Framework.AdoNET)
+                            st.DeleteAdo(id);
+
+                        else if (DbFramework.Framework == Framework.InMemory)
                         {
+
                         }
                     }
                 }

@@ -45,7 +45,7 @@ namespace School.BLL.Services
                 return new OperationResult
                 {
                     Success = false,
-                    Message = "شماره موبایل تکراری است"
+                    Message = "شماره موبایل وارد شده نامعتبر است"
                 };
             }
 
@@ -81,11 +81,11 @@ namespace School.BLL.Services
                 return new OperationResult
                 {
                     Success = false,
-                    Message = "شماره موبایل تکراری است"
+                    Message = "شماره موبایل وارد شده نامعتبر است"
                 };
             }
 
-            var student = new Student
+            var student = new StudentDto
             {
                 FirstName = studentDto.FirstName,
                 LastName = studentDto.LastName,
@@ -117,7 +117,7 @@ namespace School.BLL.Services
                 return new OperationResult
                 {
                     Success = false,
-                    Message = "شماره موبایل تکراری است"
+                    Message = "شماره موبایل وارد شده تکراری است"
                 };
             }
 
@@ -134,14 +134,45 @@ namespace School.BLL.Services
             return new OperationResult
             {
                 Success = true,
-                Message = "عملیات ثبت با موفقیت انجام شد"
+                Message = "عملیات ویرایش با موفقیت انجام شد"
             };
         }
 
         public OperationResult UpdateAdo(StudentModel studentDto)
         {
+            if (!studentDto.IsValid)
+            {
+                return new OperationResult
+                {
+                    Success = studentDto.IsValid,
+                    Message = studentDto.ErrorMessage
+                };
+            }
+
+            if (db.MobileValidationAdo(studentDto.Mobile, studentDto.Id))
+            {
+                return new OperationResult
+                {
+                    Success = false,
+                    Message = "شماره موبایل وارد شده تکراری است"
+                };
+            }
+
+            var data = new Student
+            {
+                Id = studentDto.Id,
+                FirstName = studentDto.FirstName,
+                LastName = studentDto.LastName,
+                Mobile = studentDto.Mobile,
+            };
+
+            db.UpdateAdo(data);
+
             return new OperationResult
-            { Success = true };
+            {
+                Success = true,
+                Message = "عملیات ویرایش با موفقیت انجام شد"
+            };
         }
 
         public OperationResult DeleteEF(int id)
@@ -157,8 +188,13 @@ namespace School.BLL.Services
 
         public OperationResult DeleteAdo(int id)
         {
+            db.DeleteAdo(id);
+
             return new OperationResult
-            { Success = true };
+            {
+                Success = true,
+                Message = "عملیات حذف با موفقیت انجام شد"
+            };
         }
     }
 }

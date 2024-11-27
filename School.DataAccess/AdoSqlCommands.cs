@@ -51,23 +51,6 @@ namespace School.DataAccess
             return result;
         }
 
-        public static int ExcNonQuerySql(string query, params SqlParameter[] ps)
-        {
-            SqlCommand cmd = new SqlCommand();
-            if (ps != null)
-                foreach (var p in ps)
-                    cmd.Parameters.Add(p);
-
-            int result;
-            using (cmd.Connection = StartAdoCon())
-            {
-                cmd.CommandText = query;
-                result = cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
-            }
-            return result;
-        }
-
         public static DataTable TableProc(string proc, params SqlParameter[] ps)
         {
             SqlCommand cmd = new SqlCommand();
@@ -81,27 +64,7 @@ namespace School.DataAccess
 
             DataTable dataTable = new DataTable();
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd.CommandText, cmd.Connection);
-
-            da.Fill(dataTable);
-
-            cmd.Connection.Close();
-            return dataTable;
-        }
-
-        public static DataTable TableSql(string query, params SqlParameter[] ps)
-        {
-            SqlCommand cmd = new SqlCommand();
-            if (ps != null)
-                foreach (var p in ps)
-                    cmd.Parameters.Add(p);
-
-            cmd.Connection = StartAdoCon();
-            cmd.CommandText = query;
-
-            DataTable dataTable = new DataTable();
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd.CommandText, cmd.Connection);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             da.Fill(dataTable);
 
