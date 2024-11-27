@@ -70,37 +70,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extension.cs" />
-    <Compile Include="FrmClass\FrmAddClass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmClass\FrmAddClass.Designer.cs">
-      <DependentUpon>FrmAddClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmClass\FrmEditClass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmClass\FrmEditClass.Designer.cs">
-      <DependentUpon>FrmEditClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmRegister\FrmAddRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegister\FrmAddRegister.Designer.cs">
-      <DependentUpon>FrmAddRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmRegister\FrmEditRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegister\FrmEditRegister.Designer.cs">
-      <DependentUpon>FrmEditRegister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmRegister\FrmRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegister\FrmRegister.Designer.cs">
-      <DependentUpon>FrmRegister.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmStudent\FrmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +81,6 @@
     </Compile>
     <Compile Include="FrmStudent\FrmEditStudent.Designer.cs">
       <DependentUpon>FrmEditStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmClass\FrmClass.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmClass\FrmClass.Designer.cs">
-      <DependentUpon>FrmClass.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStudent\FrmStudent.cs">
       <SubType>Form</SubType>
@@ -131,32 +94,8 @@
     <Compile Include="FrmLoad.Designer.cs">
       <DependentUpon>FrmLoad.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmClass\FrmAddClass.resx">
-      <DependentUpon>FrmAddClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmClass\FrmClass.resx">
-      <DependentUpon>FrmClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmClass\FrmEditClass.resx">
-      <DependentUpon>FrmEditClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegister\FrmAddRegister.resx">
-      <DependentUpon>FrmAddRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegister\FrmEditRegister.resx">
-      <DependentUpon>FrmEditRegister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegister\FrmRegister.resx">
-      <DependentUpon>FrmRegister.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmStudent\FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,9 +107,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoad.resx">
       <DependentUpon>FrmLoad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

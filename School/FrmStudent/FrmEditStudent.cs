@@ -35,7 +35,7 @@ namespace School.Forms.FrmStudent
                 Mobile = txtbox_mobile.Text
             };
 
-            var result = st.Update(data);
+            var result = st.UpdateEF(data);
 
             if (result.Success)
                 OnStudentInserted();

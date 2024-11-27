@@ -29,11 +29,12 @@ namespace School.Forms.FrmStudent
             if (DbFramework.Framework == Framework.EF)
             {
                 StudentService st = new StudentService();
-                datagrid_student.DataSource = st.GetData();
+                datagrid_student.DataSource = st.GetDataEF();
             }
             else if (DbFramework.Framework == Framework.AdoNET)
             {
-
+                StudentService st = new StudentService();
+                datagrid_student.DataSource = st.GetDataAdo();
             }
         }
 
@@ -75,11 +76,10 @@ namespace School.Forms.FrmStudent
                             int id = int.Parse(datagrid_student.CurrentRow.Cells[0].Value.ToString());
 
                             StudentService st = new StudentService();
-                            st.Delete(id);
+                            st.DeleteEF(id);
                         }
                         else if (DbFramework.Framework == Framework.AdoNET)
                         {
-
                         }
                     }
                 }

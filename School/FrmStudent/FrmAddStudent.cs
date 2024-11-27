@@ -33,7 +33,7 @@ namespace School.Forms.FrmStudent
                 Mobile = txtbox_mobile.Text
             };
 
-            var result = st.Insert(data);
+            var result = st.InsertEF(data);
 
             if (result.Success)
                 OnStudentInserted();
@@ -43,7 +43,21 @@ namespace School.Forms.FrmStudent
 
         private void AddStudent_ADO()
         {
-            
+            StudentService st = new StudentService();
+
+            var data = new StudentModel
+            {
+                FirstName = txtbox_firstname.Text,
+                LastName = txtbox_lastname.Text,
+                Mobile = txtbox_mobile.Text
+            };
+
+            var result = st.InsertAdo(data);
+
+            if (result.Success)
+                OnStudentInserted();
+
+            MessageBox.Show(result.Message);
         }
 
         private void btn_addstudent_Click(object sender, EventArgs e)

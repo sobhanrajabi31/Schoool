@@ -53,8 +53,6 @@
   <ItemGroup>
     <Compile Include="AdoConnection.cs" />
     <Compile Include="AdoSqlCommands.cs" />
-    <Compile Include="ClassRepository.cs" />
-    <Compile Include="RegisterRepository.cs" />
     <Compile Include="StudentRepository.cs" />
     <Compile Include="SchoolDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

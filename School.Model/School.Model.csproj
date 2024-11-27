@@ -44,17 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseValidation.cs" />
-    <Compile Include="ClassDto.cs" />
     <Compile Include="DbFramework.cs" />
-    <Compile Include="Models\ClassModel.cs" />
-    <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Extension.cs" />
     <Compile Include="Models\StudentModel.cs" />
-    <Compile Include="RegisterDto.cs" />
     <Compile Include="StudentDto.cs" />
     <Compile Include="ValidationAttributes\MobileValidationAttribute.cs" />
     <Compile Include="OperationResult.cs" />
-    <Compile Include="Entities\Class.cs" />
-    <Compile Include="Entities\Register.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace School.DataAccess
 {
-    public class AdoSqlCommands
+    public static class AdoSqlCommands
     {
-        private SqlConnection StartAdoCon()
+        public static SqlConnection StartAdoCon()
         {
             SqlConnection con = new SqlConnection(AdoConnection.ConnectionString);
             con.Open();
@@ -33,7 +33,7 @@ namespace School.DataAccess
             return param;
         }
 
-        protected int ExcNonQueryProc(string proc, params SqlParameter[] ps)
+        public static int ExcNonQueryProc(string proc, params SqlParameter[] ps)
         {
             SqlCommand cmd = new SqlCommand();
             if (ps != null)
@@ -51,7 +51,7 @@ namespace School.DataAccess
             return result;
         }
 
-        protected int ExcNonQuerySql(string query, params SqlParameter[] ps)
+        public static int ExcNonQuerySql(string query, params SqlParameter[] ps)
         {
             SqlCommand cmd = new SqlCommand();
             if (ps != null)
@@ -68,7 +68,7 @@ namespace School.DataAccess
             return result;
         }
 
-        protected SqlDataReader ExcReaderProc(string proc, params SqlParameter[] ps)
+        public static DataTable TableProc(string proc, params SqlParameter[] ps)
         {
             SqlCommand cmd = new SqlCommand();
             if (ps != null)
@@ -78,12 +78,18 @@ namespace School.DataAccess
             cmd.Connection = StartAdoCon();
             cmd.CommandText = proc;
             cmd.CommandType = CommandType.StoredProcedure;
-            var result = cmd.ExecuteReader();
-            //cmd.Connection.Close();
-            return result;
+
+            DataTable dataTable = new DataTable();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd.CommandText, cmd.Connection);
+
+            da.Fill(dataTable);
+
+            cmd.Connection.Close();
+            return dataTable;
         }
 
-        protected SqlDataReader ExcReaderSql(string query, params SqlParameter[] ps)
+        public static DataTable TableSql(string query, params SqlParameter[] ps)
         {
             SqlCommand cmd = new SqlCommand();
             if (ps != null)
@@ -92,31 +98,15 @@ namespace School.DataAccess
 
             cmd.Connection = StartAdoCon();
             cmd.CommandText = query;
-            var result = cmd.ExecuteReader();
-            //cmd.Connection.Close();
-            return result;
-        }
 
-        protected SqlDataReader ExcReaderFunc(string funcName, params SqlParameter[] ps)
-        {
-            SqlCommand cmd = new SqlCommand();
-            string commandText = "select " + funcName + "(";
-            if (ps != null)
-            {
-                foreach (var p in ps)
-                {
-                    cmd.Parameters.Add(p);
-                    commandText += p.ParameterName + ",";
-                }
-            }
+            DataTable dataTable = new DataTable();
 
-            cmd.Connection = StartAdoCon();
-            commandText = commandText.Remove(commandText.Length - 1, 1);
-            commandText += ")";
-            cmd.CommandText = commandText;
-            var result = cmd.ExecuteReader();
-            //cmd.Connection.Close();
-            return result;
+            SqlDataAdapter da = new SqlDataAdapter(cmd.CommandText, cmd.Connection);
+
+            da.Fill(dataTable);
+
+            cmd.Connection.Close();
+            return dataTable;
         }
     }
 }

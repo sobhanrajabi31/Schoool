@@ -13,8 +13,7 @@ namespace School.DataAccess
         {
             base.OnModelCreating(modelBuilder);
         }
+
         public DbSet<Student> Students { get; set; }
-        public DbSet<Class> Classes { get; set; } 
-        public DbSet<Register> Registers { get; set; }
     }
 }

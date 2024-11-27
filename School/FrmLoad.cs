@@ -1,4 +1,5 @@
 ﻿using School.DataAccess;
+using School.Forms.FrmStudent;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace School
 
         private void btn_open_Click(object sender, EventArgs e)
         {
-            FrmMain frm = new FrmMain();
+            FrmStudent frm = new FrmStudent();
             frm.Text = string.Format("{0} - {1}", frm.Text, DbFramework.Framework.ToString());
             
             this.Hide();
