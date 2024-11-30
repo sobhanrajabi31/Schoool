@@ -70,22 +70,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmStudent\FrmAddStudent.cs">
+    <Compile Include="FrmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmStudent\FrmAddStudent.Designer.cs">
+    <Compile Include="FrmAddStudent.Designer.cs">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmStudent\FrmEditStudent.cs">
+    <Compile Include="FrmEditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmStudent\FrmEditStudent.Designer.cs">
+    <Compile Include="FrmEditStudent.Designer.cs">
       <DependentUpon>FrmEditStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmStudent\FrmStudent.cs">
+    <Compile Include="FrmStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmStudent\FrmStudent.Designer.cs">
+    <Compile Include="FrmStudent.Designer.cs">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLoad.cs">
@@ -96,13 +96,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmStudent\FrmAddStudent.resx">
+    <EmbeddedResource Include="FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmStudent\FrmEditStudent.resx">
+    <EmbeddedResource Include="FrmEditStudent.resx">
       <DependentUpon>FrmEditStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmStudent\FrmStudent.resx">
+    <EmbeddedResource Include="FrmStudent.resx">
       <DependentUpon>FrmStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoad.resx">

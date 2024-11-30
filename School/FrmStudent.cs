@@ -39,7 +39,7 @@ namespace School.Forms.FrmStudent
 
             else if (DbFramework.Framework == Framework.InMemory)
             {
-                datagrid_student.DataSource = st.MemoryDB();
+                datagrid_student.DataSource = st.MemoryDB().ToList();
             }
         }
 
