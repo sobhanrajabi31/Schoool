@@ -1,11 +1,7 @@
-﻿using School.Model.CreateModel;
+﻿using School.DataAccess.MEM;
 using School.Model;
-using System;
+using School.Model.CreateModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using School.DataAccess.MEM;
 
 namespace School.BLL.StudentService.MEM
 {

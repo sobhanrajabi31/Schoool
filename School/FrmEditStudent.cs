@@ -1,18 +1,10 @@
-﻿using EF = School.BLL.StudentService.EF.StudentSv;
-using ADO = School.BLL.StudentService.ADO.StudentSv;
-using MEM = School.BLL.StudentService.MEM.StudentSv;
-using School.DataAccess;
-using School.Model;
+﻿using School.DataAccess;
 using School.Model.CreateModel;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ADO = School.BLL.StudentService.ADO.StudentSv;
+using EF = School.BLL.StudentService.EF.StudentSv;
+using MEM = School.BLL.StudentService.MEM.StudentSv;
 
 namespace School.Forms.FrmStudent
 {

@@ -1,6 +1,5 @@
 ﻿using School.Model.Entities;
 using System.Data.Entity;
-using System.Configuration;
 
 namespace School.DataAccess
 {

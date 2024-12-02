@@ -1,11 +1,7 @@
-﻿using School.Model.CreateModel;
+﻿using School.DataAccess.ADO;
 using School.Model;
-using System;
+using School.Model.CreateModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using School.DataAccess.ADO;
 
 namespace School.BLL.StudentService.ADO
 {
