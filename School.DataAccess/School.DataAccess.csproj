@@ -53,6 +53,10 @@
   <ItemGroup>
     <Compile Include="AdoConnection.cs" />
     <Compile Include="AdoSqlCommands.cs" />
+    <Compile Include="StudentRepository\ADO\StudentRepo.cs" />
+    <Compile Include="StudentRepository\EF\StudentRepo.cs" />
+    <Compile Include="StudentRepository\IStudent.cs" />
+    <Compile Include="StudentRepository\MEM\StudentRepo.cs" />
     <Compile Include="Migrations\202411271551307_InitialCreate.cs" />
     <Compile Include="Migrations\202411271551307_InitialCreate.designer.cs">
       <DependentUpon>202411271551307_InitialCreate.cs</DependentUpon>
@@ -63,7 +67,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="StudentMM.cs" />
-    <Compile Include="StudentRepository.cs" />
     <Compile Include="SchoolDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

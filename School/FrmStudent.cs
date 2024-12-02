@@ -1,5 +1,7 @@
-﻿using School.BLL;
-using School.BLL.Services;
+﻿using EF = School.BLL.StudentService.EF.StudentSv;
+using ADO = School.BLL.StudentService.ADO.StudentSv;
+using MEM = School.BLL.StudentService.MEM.StudentSv;
+using School.BLL;
 using School.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -10,16 +12,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using School.BLL.StudentService.ADO;
+using School.BLL.StudentService.EF;
 
 namespace School.Forms.FrmStudent
 {
     public partial class FrmStudent : Form
     {
-        StudentService stt = new StudentService();
         public FrmStudent()
         {
             InitializeComponent();
-            stt.LoadMemoryDB();
+            new MEM().Load();
         }
 
         private void FrmStudent_Load(object sender, EventArgs e)
@@ -29,18 +32,14 @@ namespace School.Forms.FrmStudent
 
         private void FillDataGV()
         {
-            StudentService st = new StudentService();
-
             if (DbFramework.Framework == Framework.EF)
-                datagrid_student.DataSource = st.GetDataEF();
+                datagrid_student.DataSource = new EF().GetData();
 
             else if (DbFramework.Framework == Framework.AdoNET)
-                datagrid_student.DataSource = st.GetDataAdo();
+                datagrid_student.DataSource = new ADO().GetData();
 
             else if (DbFramework.Framework == Framework.InMemory)
-            {
-                datagrid_student.DataSource = st.MemoryDB().ToList();
-            }
+                datagrid_student.DataSource = new MEM().GetData().ToList();
         }
 
         private void Buttons(object sender, EventArgs e)
@@ -78,16 +77,14 @@ namespace School.Forms.FrmStudent
                     if (MessageBox.Show("Are you sure?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         int id = int.Parse(datagrid_student.CurrentRow.Cells[0].Value.ToString());
-                        StudentService st = new StudentService();
-
                         if (DbFramework.Framework == Framework.EF)
-                            st.DeleteEF(id);
+                            new EF().Delete(id);
 
                         else if (DbFramework.Framework == Framework.AdoNET)
-                            st.DeleteAdo(id);
+                            new ADO().Delete(id);
 
                         else if (DbFramework.Framework == Framework.InMemory)
-                            st.DeleteMem(datagrid_student.CurrentRow.Index);
+                            new MEM().Delete(datagrid_student.CurrentRow.Index);
                     }
                 }
             }

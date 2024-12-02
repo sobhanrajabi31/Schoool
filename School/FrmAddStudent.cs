@@ -1,5 +1,6 @@
-﻿using School.BLL.Services;
-using School.DataAccess;
+﻿using ADO = School.BLL.StudentService.ADO.StudentSv;
+using EF = School.BLL.StudentService.EF.StudentSv;
+using MEM = School.BLL.StudentService.MEM.StudentSv;
 using School.Model.CreateModel;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using School.DataAccess;
 
 namespace School.Forms.FrmStudent
 {
@@ -25,7 +27,7 @@ namespace School.Forms.FrmStudent
 
         private void AddStudent_EF()
         {
-            StudentService st = new StudentService();
+            EF st = new EF();
 
             var data = new StudentModel
             {
@@ -34,7 +36,7 @@ namespace School.Forms.FrmStudent
                 Mobile = txtbox_mobile.Text
             };
 
-            var result = st.InsertEF(data);
+            var result = st.Insert(data);
 
             if (result.Success)
                 OnStudentInserted();
@@ -44,7 +46,7 @@ namespace School.Forms.FrmStudent
 
         private void AddStudent_ADO()
         {
-            StudentService st = new StudentService();
+            ADO st = new ADO();
 
             var data = new StudentModel
             {
@@ -53,7 +55,7 @@ namespace School.Forms.FrmStudent
                 Mobile = txtbox_mobile.Text
             };
 
-            var result = st.InsertAdo(data);
+            var result = st.Insert(data);
 
             if (result.Success)
                 OnStudentInserted();
@@ -63,7 +65,7 @@ namespace School.Forms.FrmStudent
 
         private void AddStudent_Mem()
         {
-            StudentService st = new StudentService();
+            MEM st = new MEM();
 
             var data = new StudentModel
             {
@@ -73,7 +75,7 @@ namespace School.Forms.FrmStudent
                 Mobile = txtbox_mobile.Text
             };
 
-            var result = st.InsertMem(data);
+            var result = st.Insert(data);
 
             if (result.Success)
                 OnStudentInserted();
@@ -89,11 +91,6 @@ namespace School.Forms.FrmStudent
                 AddStudent_ADO();
             else if (DbFramework.Framework == Framework.InMemory)
                 AddStudent_Mem();
-        }
-
-        private void FrmAddStudent_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

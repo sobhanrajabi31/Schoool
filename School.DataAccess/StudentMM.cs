@@ -1,4 +1,5 @@
-﻿using School.Model.Entities;
+﻿using School.Model;
+using School.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace School.BLL
 {
     public class StudentMM
     {
-        public static List<Student> Students { get; set; }
+        public static List<StudentDto> Students { get; set; }
     }
 }

@@ -51,7 +51,7 @@ namespace School.DataAccess
             return result;
         }
 
-        public static DataTable TableProc(string proc, params SqlParameter[] ps)
+        public static List<DataRow> TableProc(string proc, params SqlParameter[] ps)
         {
             SqlCommand cmd = new SqlCommand();
             if (ps != null)
@@ -69,7 +69,8 @@ namespace School.DataAccess
             da.Fill(dataTable);
 
             cmd.Connection.Close();
-            return dataTable;
+
+            return dataTable.Select().ToList();
         }
     }
 }
